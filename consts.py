@@ -14,9 +14,9 @@ to the midi note and CC number you want to assign to each control.
 '''
 
 CHANNEL = 4 #I have this set to midi channel 2 (which corresponds to 1
-			#in python since python counts from zero) on my MPD, that way
-			#I have all midi 128 notes available to me on channel 1 (0 in python)
-			#for playing instruments
+    #in python since python counts from zero) on my MPD, that way
+    #I have all midi 128 notes available to me on channel 1 (0 in python)
+    #for playing instruments
 CHANNEL_USER = 0
 CHANNEL_FX = 1
 CHANNEL_INST = 2
@@ -26,9 +26,9 @@ CHANNEL_MIXER = 3
 GRIDSIZE = [8,1] ##the red box grid size(does not have to be square)
 
 LAUNCH_BUTTONS =[[57,58,59,54,55,56,51,52,53]]
-				##these are the midi note values that correspond to the scene launch
-				#buttons withing the SessionGrid. You will need to add more values or
-				#delete values coressponding to the size of the Grid you set.
+    ##these are the midi note values that correspond to the scene launch
+    #buttons withing the SessionGrid. You will need to add more values or
+    #delete values coressponding to the size of the Grid you set.
 
 SCENE_BUTTONS = [72]#,73,74,75]
 
@@ -50,6 +50,15 @@ SOLO_BUTTONS = [73,74,75,76,77,78,79,80]
 
 MIX_FADERS =   [12,13,14,15,16,17,18,19] ##these correspond to the CC message number for each fader
 PAN_CONTROLS = [20,21,22,23,24,25,26,27]
+
+SEND_CONTROLS = [[28,36,44,52],
+                    [29,37,45,53],
+                    [30,38,46,54],
+                    [31,39,47,55],
+                    [32,40,48,56],
+                    [33,41,49,57],
+                    [34,42,50,58],
+                    [35,43,51,59]]
 MASTER_VOLUME = [15]
 PREHEAR = [19]
 
@@ -66,7 +75,7 @@ PREVIOUS_DEVICE = 76
 
 DEVICE_ON = 79
 DEVICE_LOCK = 78 #Locks your macro controls to current device regardless of where
-				 #you are in your session
+     #you are in your session
 DEVICE_BANK_UP = 81
 DEVICE_BANK_DOWN = 80
 

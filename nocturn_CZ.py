@@ -140,6 +140,10 @@ class nocturn_CZ(ControlSurface):
             mixer.channel_strip(index).set_solo_button(ButtonElement(True, MIDI_CC_TYPE, CHANNEL_MIXER, SOLO_BUTTONS[index]))
             mixer.channel_strip(index).set_mute_button(ButtonElement(True, MIDI_CC_TYPE, CHANNEL_MIXER, MUTE_BUTTONS[index]))
             mixer.channel_strip(index).set_select_button(ButtonElement(True, MIDI_CC_TYPE, CHANNEL_INST, TRACK_SELECTS[index]))
+            mixer.channel_strip(index).set_send_controls([SliderElement(MIDI_CC_TYPE, CHANNEL_MIXER, SEND_CONTROLS[index][0]),
+                                                              SliderElement(MIDI_CC_TYPE, CHANNEL_MIXER, SEND_CONTROLS[index][1]),
+                                                              SliderElement(MIDI_CC_TYPE, CHANNEL_MIXER, SEND_CONTROLS[index][2]),
+                                                              SliderElement(MIDI_CC_TYPE, CHANNEL_MIXER, SEND_CONTROLS[index][3])])
 
 
 
