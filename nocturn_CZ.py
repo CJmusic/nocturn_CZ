@@ -137,8 +137,8 @@ class nocturn_CZ(ControlSurface):
             # mixer.channel_strip(index).set_volume_control(SliderElement(MIDI_CC_TYPE, CHANNEL_INST, MIX_FADERS[index]))
             mixer.channel_strip(index).set_pan_control(SliderElement(MIDI_CC_TYPE, CHANNEL_MIXER, PAN_CONTROLS[index]))
             mixer.channel_strip(index).set_arm_button(ButtonElement(True, MIDI_CC_TYPE, CHANNEL_INST, ARM_BUTTONS[index])) #sets the record arm button
-            mixer.channel_strip(index).set_solo_button(ButtonElement(True, MIDI_CC_TYPE, CHANNEL_MIXER, SOLO_BUTTONS[index]))
-            mixer.channel_strip(index).set_mute_button(ButtonElement(True, MIDI_CC_TYPE, CHANNEL_MIXER, MUTE_BUTTONS[index]))
+            mixer.channel_strip(index).set_solo_button(ButtonElement(True, MIDI_CC_TYPE, CHANNEL_INST, SOLO_BUTTONS[index]))
+            mixer.channel_strip(index).set_mute_button(ButtonElement(True, MIDI_CC_TYPE, CHANNEL_INST, MUTE_BUTTONS[index]))
             mixer.channel_strip(index).set_select_button(ButtonElement(True, MIDI_CC_TYPE, CHANNEL_INST, TRACK_SELECTS[index]))
             mixer.channel_strip(index).set_send_controls([SliderElement(MIDI_CC_TYPE, CHANNEL_MIXER, SEND_CONTROLS[index][0]),
                                                               SliderElement(MIDI_CC_TYPE, CHANNEL_MIXER, SEND_CONTROLS[index][1]),
