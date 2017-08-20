@@ -145,14 +145,15 @@ class nocturn_CZ(ControlSurface):
 
 
         """TRANSPORT CONTROLS"""
-        stop_button = ButtonElement(False, MIDI_CC_TYPE, 0, STOP_BUTTON)
-        play_button = ButtonElement(False, MIDI_CC_TYPE, 0, PLAY_BUTTON)
-        record_button = ButtonElement(False,MIDI_CC_TYPE,0,RECORD_BUTTON)
+        stop_button = ButtonElement(False, MIDI_CC_TYPE, CHANNEL_MIXER, STOP_BUTTON)
+        play_button = ButtonElement(False, MIDI_CC_TYPE, CHANNEL_MIXER, PLAY_BUTTON)
+        record_button = ButtonElement(False,MIDI_CC_TYPE,CHANNEL_MIXER,RECORD_BUTTON)
+        overdub_button = ButtonElement(False,MIDI_CC_TYPE,CHANNEL_MIXER,OVERDUB_BUTTON)
         transport = TransportComponent()
         transport.set_stop_button(stop_button)
         transport.set_play_button(play_button)
-        transport.set_overdub_button(record_button)
-        transport.set_overdub_button(record_button)
+        transport.set_overdub_button(overdub_button)
+        transport.set_record_button(record_button)
         transport.set_seek_buttons(ButtonElement(False,MIDI_CC_TYPE,0,SEEK_LEFT),ButtonElement(False,MIDI_CC_TYPE,0,SEEK_RIGHT))
 
     def _setup_device_control(self):
