@@ -128,11 +128,10 @@ class nocturn_CZ(ControlSurface):
         mixer.set_track_offset(0) #Sets start point for mixer strip (offset from left)
         """set up the mixer buttons"""
         self.song().view.selected_track = mixer.channel_strip(0)._track
-        # mixer.set_master_volume_control(SliderElement(MIDI_CC_TYPE, CHANNEL_USER, MASTER_VOLUME))
-        # master = mixer.master_strip()
-        # master.set_volume_control(SliderElement(MIDI_CC_TYPE, CHANNEL, MASTER_VOLUME))
+        master = mixer.master_strip()
+        master.set_volume_control(SliderElement(MIDI_CC_TYPE, CHANNEL_USER, MASTER_VOLUME))
+        mixer.set_prehear_volume_control(SliderElement(MIDI_CC_TYPE, CHANNEL_USER, PREHEAR))
 
-        # mixer.set_prehear_volume_control(SliderElement(MIDI_CC_TYPE, CHANNEL_USER, PREHEAR))
         for index in xrange(GRIDSIZE[0]):
             mixer.channel_strip(index).set_volume_control(SliderElement(MIDI_CC_TYPE, CHANNEL_MIXER, MIX_FADERS[index]))
             # mixer.channel_strip(index).set_volume_control(SliderElement(MIDI_CC_TYPE, CHANNEL_INST, MIX_FADERS[index]))
