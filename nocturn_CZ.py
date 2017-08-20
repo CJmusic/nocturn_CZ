@@ -31,7 +31,7 @@ from _Framework.ButtonElement import ButtonElement
 from _Framework.ButtonMatrixElement import ButtonMatrixElement
 from ConfigurableButtonElement import ConfigurableButtonElement
 from _Framework.SessionComponent import SessionComponent
-from _Framework.TransportComponent import TransportComponent
+# from _Framework.TransportComponent import TransportComponent
 from _Framework.DeviceComponent import DeviceComponent
 from _Framework.EncoderElement import EncoderElement
 from _Framework.SessionZoomingComponent import SessionZoomingComponent
@@ -40,6 +40,7 @@ from _Framework.ChannelStripComponent import ChannelStripComponent
 from _APC.DetailViewCntrlComponent import DetailViewCntrlComponent
 
 from DeviceNavComponent import DeviceNavComponent
+from TransportComponent import TransportComponent
 
 
 from _Framework.MixerComponent import MixerComponent # Class encompassing several channel strips to form a mixer
@@ -127,11 +128,11 @@ class nocturn_CZ(ControlSurface):
         mixer.set_track_offset(0) #Sets start point for mixer strip (offset from left)
         """set up the mixer buttons"""
         self.song().view.selected_track = mixer.channel_strip(0)._track
-        # mixer.set_master_volume_control(SliderElement(MIDI_CC_TYPE, CHANNEL, MASTER_VOLUME))
+        # mixer.set_master_volume_control(SliderElement(MIDI_CC_TYPE, CHANNEL_USER, MASTER_VOLUME))
         # master = mixer.master_strip()
         # master.set_volume_control(SliderElement(MIDI_CC_TYPE, CHANNEL, MASTER_VOLUME))
 
-        # mixer.set_prehear_volume_control(SliderElement(MIDI_CC_TYPE, CHANNEL, PREHEAR))
+        # mixer.set_prehear_volume_control(SliderElement(MIDI_CC_TYPE, CHANNEL_USER, PREHEAR))
         for index in xrange(GRIDSIZE[0]):
             mixer.channel_strip(index).set_volume_control(SliderElement(MIDI_CC_TYPE, CHANNEL_MIXER, MIX_FADERS[index]))
             # mixer.channel_strip(index).set_volume_control(SliderElement(MIDI_CC_TYPE, CHANNEL_INST, MIX_FADERS[index]))
@@ -154,11 +155,16 @@ class nocturn_CZ(ControlSurface):
         record_button = ButtonElement(False,MIDI_CC_TYPE,CHANNEL_MIXER,RECORD_BUTTON)
         overdub_button = ButtonElement(False,MIDI_CC_TYPE,CHANNEL_MIXER,OVERDUB_BUTTON)
         transport = TransportComponent()
+        transport.TEMPO_TOP = 188
         transport.set_stop_button(stop_button)
         transport.set_play_button(play_button)
         transport.set_overdub_button(overdub_button)
         transport.set_record_button(record_button)
         transport.set_seek_buttons(ButtonElement(False,MIDI_CC_TYPE,0,SEEK_LEFT),ButtonElement(False,MIDI_CC_TYPE,0,SEEK_RIGHT))
+        transport.set_tempo_control(SliderElement(MIDI_CC_TYPE, CHANNEL_USER, TEMPO))
+        transport.set_metronome_button(ButtonElement(False,MIDI_CC_TYPE,CHANNEL_USER, METRONOME))
+        transport.set_tap_tempo_button(ButtonElement(False,MIDI_CC_TYPE,CHANNEL_USER,TAP_TEMPO))
+
 
     def _setup_device_control(self):
         is_momentary = True

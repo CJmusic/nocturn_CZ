@@ -59,8 +59,14 @@ SEND_CONTROLS = [[28,36,44,52],
                     [33,41,49,57],
                     [34,42,50,58],
                     [35,43,51,59]]
-MASTER_VOLUME = [15]
-PREHEAR = [19]
+
+
+MASTER_VOLUME = 0
+PREHEAR = 1
+TEMPO = 2
+TAP_TEMPO = 10
+METRONOME = 11
+
 
 
 TRACK_SELECTS = [73,74,75,76,77,78,79,80]
