@@ -40,6 +40,7 @@ from _Framework.ChannelStripComponent import ChannelStripComponent
 from _APC.DetailViewCntrlComponent import DetailViewCntrlComponent
 
 from DeviceNavComponent import DeviceNavComponent
+from TrackControllerComponent import TrackControllerComponent
 
 
 from _Framework.MixerComponent import MixerComponent # Class encompassing several channel strips to form a mixer
@@ -97,7 +98,7 @@ class nocturn_CZ(ControlSurface):
                 for column in xrange(GRIDSIZE[0]):
                     self.log("CZ COLUMN")
                     self.log(str(column))
-                    button = ConfigurableButtonElement(True, MIDI_NOTE_TYPE, CHANNEL, LAUNCH_BUTTONS[row][column])
+                    button = ConfigurableButtonElement(True, MIDI_NOTE_TYPE, CHANNEL_MIXER, LAUNCH_BUTTONS[row][column])
                     button.name = str(column) + '_Clip_' + str(row) + '_Button'
                     button_row.append(button)
                     clip_slot = scene.clip_slot(column)
@@ -187,6 +188,11 @@ class nocturn_CZ(ControlSurface):
         self._device.set_bank_prev_button(down_bank_button)
         self._device.set_bank_next_button(up_bank_button)
 
+
+        # self._track_controller = self.register_component(TrackControllerComponent(control_surface = ControlSurface, implicit_arm = False))
+        # self.set_next_track_button(ButtonElement()) 
+        # self.set_next_track_button(ButtonElement())
+        
 
 
 

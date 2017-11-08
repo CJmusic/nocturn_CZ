@@ -25,7 +25,7 @@ CHANNEL_MIXER = 3
 ##RED BOX Control
 GRIDSIZE = [8,1] ##the red box grid size(does not have to be square)
 
-LAUNCH_BUTTONS =[[57,58,59,54,55,56,51,52,53]]
+LAUNCH_BUTTONS =[[51,52,53,54,55,56,57,58,59]]
     ##these are the midi note values that correspond to the scene launch
     #buttons withing the SessionGrid. You will need to add more values or
     #delete values coressponding to the size of the Grid you set.
@@ -70,7 +70,7 @@ METRONOME = 11
 
 
 TRACK_SELECTS = [73,74,75,76,77,78,79,80]
-TRACK_STOPS =   [48,49,50,51,52,53,54,55]
+TRACK_STOPS =   [43,44,45,46,47,48,49,50]
 
 ##DEVICE Controls
 #use these in combination with the track select buttons to quickly navigate to
